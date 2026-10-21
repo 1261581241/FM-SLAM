@@ -1,0 +1,3 @@
+Method,Avg_Erased_Features,Std_Erased_Features,Est_Kept_Features,Retention_Rate
+M0 (Baseline),0.00,0.00,1000.00,100.00
+M3 (FM-SLAM),165.36,130.31,834.64,83.46

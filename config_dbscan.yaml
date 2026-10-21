@@ -1,0 +1,46 @@
+# FM-SLAM 动态检测参数配置文件
+# 用于论文中明确说明的参数设置
+
+# ==================== 光流跟踪参数 ====================
+optical_flow:
+  window_size: [15, 15]      # LK光流搜索窗口大小
+  max_level: 2               # 金字塔层数
+  max_iterations: 10         # 最大迭代次数
+  epsilon: 0.03              # 收敛阈值
+
+# ==================== ORB特征提取参数 ====================
+orb_features:
+  n_features: 1000           # 提取的特征点数量
+  scale_factor: 1.2          # 金字塔尺度因子
+  n_levels: 8                # 金字塔层数
+  ini_th_fast: 20            # FAST初始阈值
+  min_th_fast: 7             # FAST最小阈值
+
+# ==================== 动态检测参数 ====================
+dynamic_detection:
+  motion_threshold: 2.0      # 运动幅度阈值（像素）
+                             # 说明：像素位移超过此值认为可能是动态点
+
+# ==================== DBSCAN聚类参数 ====================
+dbscan:
+  eps: 15.0                  # ε_eps: 邻域半径（像素）
+                             # 说明：两点距离小于eps则认为在同一邻域
+  min_samples: 3             # min_samples: 最小样本数
+                             # 说明：核心点的邻域内至少需要的点数
+
+# ==================== FastSAM参数 ====================
+fastsam:
+  model: "FastSAM-x.pt"      # 模型权重文件
+  device: "cuda:0"           # 推理设备 (cuda:0 / cpu)
+
+# ==================== 实验设置 ====================
+experiment:
+  dataset: "TUM RGB-D"       # 数据集名称
+  sequence: "freiburg3_walking_xyz"  # 序列名称
+
+# ==================== 论文中应报告的参数 ====================
+# 1. 运动阈值 (τ_motion): 2.0 像素
+# 2. DBSCAN邻域半径 (ε_eps): 15.0 像素
+# 3. DBSCAN最小样本数 (min_samples): 3
+# 4. ORB特征数量: 1000
+# 5. 光流窗口大小: 15×15

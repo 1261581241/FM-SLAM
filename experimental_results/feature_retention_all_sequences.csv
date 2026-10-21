@@ -1,0 +1,5 @@
+Sequence,M0_Erased,M3_Erased,M3_Kept,Retention_Rate,Extra_Filtered
+walking_xyz,0.00,165.36,834.64,83.46,165.36
+walking_rpy,0.00,187.79,812.21,81.22,187.79
+walking_halfsphere,0.00,181.39,818.61,81.86,181.39
+walking_static,0.00,173.41,826.59,82.66,173.41
